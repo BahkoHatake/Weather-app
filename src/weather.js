@@ -59,3 +59,16 @@ export function HourlyWeather(parsedData) {
     twenty,
   };
 }
+
+export function TomorrowWeather(parsedData) {
+  const tTemp = parsedData.forecast.forecastday[1].day.avgtemp_c;
+  const tIcon = parsedData.forecast.forecastday[1].day.condition.icon;
+  const oTemp = parsedData.forecast.forecastday[2].day.avgtemp_c;
+  const oIcon = parsedData.forecast.forecastday[2].day.condition.icon;
+  return {
+    tIcon,
+    tTemp,
+    oIcon,
+    oTemp,
+  };
+}
